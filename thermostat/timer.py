@@ -1,36 +1,29 @@
 
 import RPi.GPIO as GPIO
 import time
-import Adafruit_DHT as DHT
+import datetime from datetime
 
-RELAY_PIN = 21
-DHT_PIN = 20
+class Timer:
+    """Timer class for reoccurring events, default to light cycle"""
+	minutesPerHour = 60
+	hoursPerDay = 24
+	minutesPerDay = minutesPerHour * hoursPerDay
+	photoperiod = 540
+	
+	def __init__(self, trigger, frequency=minutesPerDay, durationInMinutes=photoperiod):
+		self.trigger = trigger
+		self.frequency = frequency
+		self.durationInMinutes = durationInMinutes
+	
+	def start(self):
+		self.seedtime = datetime.datetime.now()
+		while True:
+			timeDif = datetime.now() - self.seedtime
+			if timeDif.minutes >= self.duration:
+				self.trigger.off()
+				print 'Timer off\n'
+			else:
+				self.trigger.on()
+				print 'Timer on\n'
+			time.sleep(5)
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-GPIO.setup( RELAY_PIN, GPIO.OUT )
-GPIO.setup( DHT_PIN, GPIO.IN )
-
-sensor = DHT.DHT22
-setTemp = 85
-setHumidity = 60
-
-try:
-	while True:
-		humidity, temperature_C = DHT.read_retry( sensor, DHT_PIN )
-		temperature_F = temperature_C * 9/5.0 + 32
-		
-		print temperature_F, humidity
-		
-		if temperature_F < setTemp: 
-			GPIO.output( RELAY_PIN, GPIO.LOW )
-			print 'relay on'
-		else:
-			GPIO.output( RELAY_PIN, GPIO.HIGH )
-			print 'relay off'
-		time.sleep(5)
-except KeyboardInterrupt:
-	print 'You killed me :( '
-finally:
-	print 'cleaning up'
-	GPIO.cleanup()
