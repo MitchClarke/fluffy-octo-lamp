@@ -21,10 +21,8 @@ if __name__ == "__main__":
     try:
         while True:
             topTimerTrigger.on()
-            print 'on'
             time.sleep(3)
             topTimerTrigger.off()
-            print 'off'
             time.sleep(3)
     except KeyboardInterrupt:
         print 'you killed me! :('
