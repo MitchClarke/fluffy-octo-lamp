@@ -1,7 +1,7 @@
 
 import RPi.GPIO as GPIO
 import time
-import datetime from datetime
+from datetime import datetime
 
 class Timer:
     """Timer class for reoccurring events, default to light cycle"""
