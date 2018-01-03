@@ -5,11 +5,11 @@ import time
 from Triggerable import Triggerable
 from threading import Thread
 
-TOP_TIMER_PIN = 1
-BOTTOM_TIMER_PIN = 2
-TOP_RADIANT_PIN = 3
-BOTTOM_RADIANT_PIN = 4
-TOP_THERMOMETER_PIN = 5
+TOP_TIMER_PIN = 21
+BOTTOM_TIMER_PIN = 20
+TOP_RADIANT_PIN = 16
+BOTTOM_RADIANT_PIN = 23
+TOP_THERMOMETER_PIN = 24
 
 if __name__ == "__main__":
     topTimerTrigger = Triggerable(TOP_TIMER_PIN)
