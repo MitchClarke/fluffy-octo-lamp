@@ -17,8 +17,8 @@ class Thermostat:
 	def run(self):
 		try:
 			while True:
-				if (thermometer.get_temp() < self.target && self.action == heat) ||
-					(thermometer.get_temp() > self.target && self.action == cool): 
+				if (thermometer.get_temp() < self.target and self.action == heat) or\
+					(thermometer.get_temp() > self.target and self.action == cool): 
 					self.triggerable.on()
 					print 'relay on'
 				else:

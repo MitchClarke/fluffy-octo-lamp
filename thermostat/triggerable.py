@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 class Triggerable:
 	def __init__(self, pin_num):
 		self.pin_num = pin_num
+		GPIO.setmode( GPIO.BOARD )
 		GPIO.setup( self.pin_num, GPIO.OUT )
 
 	def on(self):
