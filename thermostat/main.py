@@ -6,11 +6,11 @@ import time
 from Triggerable import Triggerable
 from threading import Thread
 
-TOP_TIMER_PIN = 29
-BOTTOM_TIMER_PIN = 28
-TOP_RADIANT_PIN = 27
-BOTTOM_RADIANT_PIN = 4
-TOP_THERMOMETER_PIN = 5
+TOP_TIMER_PIN = 21
+BOTTOM_TIMER_PIN = 20
+TOP_RADIANT_PIN = 16
+BOTTOM_RADIANT_PIN = 23
+TOP_THERMOMETER_PIN = 24
 
 if __name__ == "__main__":
     topTimerTrigger = Triggerable(TOP_TIMER_PIN)
@@ -21,8 +21,10 @@ if __name__ == "__main__":
     try:
         while True:
             topTimerTrigger.on()
+			print 'on'
             time.sleep(3)
             topTimerTrigger.off()
+			print 'off'
             time.sleep(3)
     except KeyboardInterrupt:
         print 'you killed me! :('
