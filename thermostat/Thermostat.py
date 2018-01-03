@@ -1,5 +1,5 @@
 
-import triggerable
+import Triggerable
 import RPi.GPIO as GPIO
 import time
 
