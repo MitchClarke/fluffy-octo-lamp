@@ -15,9 +15,9 @@ TOP_THERMOMETER_PIN = 24
 if __name__ == "__main__":
     topTimerTrigger = Triggerable(TOP_TIMER_PIN)
     bottomTimerTrigger = Triggerable(BOTTOM_TIMER_PIN)
-	bottomTimerTrigger.off()
+    bottomTimerTrigger.off()
     topRadiantTrigger = Triggerable(TOP_RADIANT_PIN)
-	topRadiantTrigger.off()
+    topRadiantTrigger.off()
     bottomRadiantTrigger = Triggerable(BOTTOM_RADIANT_PIN)
     bottomRadiantTrigger.off()
     try:
