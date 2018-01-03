@@ -1,8 +1,8 @@
-import Thermostat
-import Thermometer
-import Timer
+from Thermostat import Thermostat
+from Thermometer import Thermometer
+from Timer import Timer
 import time
-import Triggerable
+from Triggerable import Triggerable
 from threading import Thread
 
 TOP_TIMER_PIN = 1
