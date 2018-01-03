@@ -6,18 +6,20 @@ import time
 from Triggerable import Triggerable
 from threading import Thread
 
-TOP_TIMER_PIN = 21
+TOP_TIMER_PIN = 23
 BOTTOM_TIMER_PIN = 20
 TOP_RADIANT_PIN = 16
-BOTTOM_RADIANT_PIN = 23
+BOTTOM_RADIANT_PIN = 21
 TOP_THERMOMETER_PIN = 24
 
 if __name__ == "__main__":
     topTimerTrigger = Triggerable(TOP_TIMER_PIN)
     bottomTimerTrigger = Triggerable(BOTTOM_TIMER_PIN)
+	bottomTimerTrigger.off()
     topRadiantTrigger = Triggerable(TOP_RADIANT_PIN)
+	topRadiantTrigger.off()
     bottomRadiantTrigger = Triggerable(BOTTOM_RADIANT_PIN)
-    
+    bottomRadiantTrigger.off()
     try:
         while True:
             topTimerTrigger.on()
