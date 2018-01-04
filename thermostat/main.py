@@ -10,8 +10,8 @@ TOP_TIMER_PIN = 23
 BOTTOM_TIMER_PIN = 12
 TOP_RADIANT_PIN = 16
 BOTTOM_RADIANT_PIN = 20
-TOP_THERMOMETER_PIN = 21
 #24,25,8
+Triggerable(21).off()
 Triggerable(24).off()
 Triggerable(25).off()
 Triggerable(8).off()
@@ -30,7 +30,6 @@ if __name__ == "__main__":
             time.sleep(3)
             topTimerTrigger.off()
             time.sleep(3)
-			print str(GPIO.input(16)) + str(GPIO.input(20))
     except KeyboardInterrupt:
         print 'you killed me! :('
     finally:
