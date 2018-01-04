@@ -24,16 +24,7 @@ if __name__ == "__main__":
     topRadiantTrigger.off()
     bottomRadiantTrigger = Triggerable(BOTTOM_RADIANT_PIN)
     bottomRadiantTrigger.off()
-    try:
-        while True:
-            topTimerTrigger.on()
-            time.sleep(3)
-            topTimerTrigger.off()
-            time.sleep(3)
-    except KeyboardInterrupt:
-        print 'you killed me! :('
-    finally:
-        GPIO.cleanup()
+	sleep(30)
     
     #topRadiantThermometer = Thermometer(TOP_THERMOMETER_PIN)
     #bottomRadiantThermometer = Thermometer(BOTTOM_THERMOMETER_PIN)

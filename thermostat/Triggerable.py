@@ -10,7 +10,9 @@ class Triggerable:
     def on(self):
         print 'turning ' + str(self.pin_num) + ' high'
         GPIO.output( self.pin_num, GPIO.HIGH )
-
+		print str(GPIO.input(self.pin_num))
+		
     def off(self):
         print 'turning ' + str(self.pin_num) + ' low'
         GPIO.output( self.pin_num, GPIO.LOW )
+		print str(GPIO.input(self.pin_num))
