@@ -20,4 +20,4 @@ class Thermometer:
         return temperature_F
     
     def get_reading_clean(self):
-        return get_reading() + " " + self.units
+        return str(self.get_reading()) + " " + self.units

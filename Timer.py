@@ -15,7 +15,7 @@ class Timer:
         self.frequency = frequency
         self.durationInMinutes = durationInMinutes
     
-    def start(self):
+    def run(self):
         self.seedtime = datetime.datetime.now()
         while True:
             timeDif = datetime.now() - self.seedtime
@@ -26,4 +26,3 @@ class Timer:
                 self.trigger.on()
                 print 'Timer on\n'
             time.sleep(5)
-
