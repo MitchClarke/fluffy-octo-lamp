@@ -11,9 +11,9 @@ if __name__ == "__main__":
         trigger = new Triggerable(sys.argv[1])
         if sys.argv[2] == '1':
             trigger.on()
-			sleep(sys.argv[3])
-			trigger.off()
+            sleep(sys.argv[3])
+            trigger.off()
         elif sys.argv[2] == '0':
             trigger.off()
-			sleep(sys.argv[3])
+            sleep(sys.argv[3])
             trigger.on()
