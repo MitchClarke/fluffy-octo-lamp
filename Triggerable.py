@@ -6,7 +6,6 @@ class Triggerable:
         self.pin_num = pin_num
         GPIO.setmode( GPIO.BCM )
         GPIO.setup( self.pin_num, GPIO.OUT )
-        self.off()
 
     def on(self):
         print 'turning ' + str(self.pin_num) + ' high'
