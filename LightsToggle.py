@@ -12,4 +12,3 @@ if __name__ == "__main__":
             trigger.on()
         elif sys.argv[2] == '0':
             trigger.off()
-        time.sleep(60)
