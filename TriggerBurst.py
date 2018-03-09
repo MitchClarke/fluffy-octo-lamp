@@ -15,5 +15,5 @@ if __name__ == "__main__":
             trigger.off()
         elif sys.argv[2] == '0':
             trigger.off()
-            sleep(sys.argv[3])
+            sleep(float(sys.argv[3]))
             trigger.on()
