@@ -1,5 +1,5 @@
 
-import Triggerable
+from Triggerable import Triggerable
 import sys
 from time import sleep
 
