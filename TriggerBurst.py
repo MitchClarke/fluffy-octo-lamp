@@ -11,7 +11,7 @@ if __name__ == "__main__":
         trigger = Triggerable(int(sys.argv[1]))
         if sys.argv[2] == '1':
             trigger.on()
-            sleep(sys.argv[3])
+            sleep(float(sys.argv[3]))
             trigger.off()
         elif sys.argv[2] == '0':
             trigger.off()
