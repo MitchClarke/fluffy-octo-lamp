@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print 'Expected 4 paramters'
         sys.exit(1)
     else:
-        trigger = new Triggerable(sys.argv[1])
+        trigger = Triggerable(sys.argv[1])
         if sys.argv[2] == '1':
             trigger.on()
             sleep(sys.argv[3])
